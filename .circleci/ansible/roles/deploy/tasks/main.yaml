@@ -7,9 +7,9 @@
 - name: extract the zipped artifact into the EC2 instance
   become: true
   command: tar -xvf ~/artifact.tar.gz
-- name: stop the pm2
+- name: npm install
   become: true
-  command: 'pm2 stop default'
+  command: npm install
 - name: start the pm2
   become: true
   command: 'pm2 start npm -- start'
